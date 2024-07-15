@@ -1,0 +1,69 @@
+/* Contact section styling */
+/* CONTACT */
+.contact_wrapper {
+    @apply flex flex-col gap-8;
+
+    /* Responsive styling */
+    @apply sm:flex-row sm:justify-between sm:items-center;
+}
+
+.contact_wrapper .contact_links {
+    @apply flex flex-col gap-2;
+}
+
+.contact_link {
+    @apply relative pl-8 underline;
+}
+
+.contact_link::after {
+    @apply absolute left-0 top-1/2 w-6 h-6 bg-center bg-contain bg-no-repeat;
+    content: '';
+    transform: translateY(-50%);
+}
+
+.contact_link.email::after {
+    background-image: url(/src/assets/mail-outline.svg);
+}
+
+.contact_link.phone::after {
+    background-image: url(/src/assets/call-outline.svg);
+}
+
+.contact_apps {
+    @apply flex gap-2 justify-center;
+}
+
+.contact_app {
+    @apply flex relative w-10 h-10 rounded-sm;
+}
+
+.contact_app::after {
+    @apply absolute left-1/2 top-1/2 w-8 h-8 bg-center bg-contain bg-no-repeat opacity-50;
+    content: '';
+    transform: translateX(-50%) translateY(-50%);
+    filter: brightness(0) saturate(100%) invert(86%) sepia(14%) saturate(195%) hue-rotate(173deg) brightness(108%) contrast(97%);
+}
+
+.contact_app:hover {
+    @apply bg-color-primary-light-opaque;
+}
+
+.contact_app:hover::after {
+    @apply opacity-100;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(166deg) brightness(108%) contrast(101%);
+}
+
+.contact_app.github::after {
+    background-image: url(/src/assets/logo-github.svg);
+}
+
+.contact_app.linkedin::after {
+    background-image: url(/src/assets/logo-linkedin.svg);
+}
+
+.contact_footer {
+    @apply mt-8 pt-8 text-center border-t border-color-primary-light-opaque;
+
+    /* Responsive styling */
+    @apply sm:mt-12;
+}
