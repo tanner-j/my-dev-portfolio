@@ -37,7 +37,7 @@ const Projects = () => {
     ];
 
     return (
-        <section id="projects">
+        <section id="projects" data-scroll data-scroll-speed="0.1">
             <div className="section-content projects">
                 <h1 className="section-header">
                     <span className="text-color-primary">&#47; </span>

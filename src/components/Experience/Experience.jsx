@@ -3,7 +3,7 @@ import './Experience.scss'
 
 const Experience = () => {
     return (
-        <section id="experience">
+        <section id="experience" data-scroll data-scroll-speed="0.1">
             <div className="section-content experience">
                 <h1 className="section-header">
                     <span className="text-color-primary">&#47; </span>
