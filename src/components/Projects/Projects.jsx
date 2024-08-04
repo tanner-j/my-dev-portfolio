@@ -3,6 +3,7 @@ import ProjectCard from './ProjectCard'
 import LogosImg from '../../assets/projects-logos.png'
 import DesignSystemImg from '../../assets/project-designsystem.png'
 import ShowcaseImg from '../../assets/project-showcase.png'
+import './Projects.scss'
 
 const Projects = () => {
     const projects = [

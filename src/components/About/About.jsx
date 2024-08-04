@@ -1,9 +1,10 @@
 import React from 'react'
 import about from '../../assets/about.jpg'
+import './About.scss'
 
 const About = () => {
     return (
-        <section id="about">
+        <section id="about" data-scroll data-scroll-speed="0.1">
             <div className="section-content about">
                 <h1 className="section-header">
                     <span className="text-color-primary">&#47; </span>
@@ -26,9 +27,9 @@ const About = () => {
                                 <p>Kennesaw State University</p>
                             </div>
                         </div>
-                        <p>Based in Denver, CO, I'm a front-end developer and UI/UX engineer with a strong background in developing software solutions with delightful user experiences.</p>
+                        <p className='about-description'>Based in Denver, CO, I'm a front-end developer and UI/UX engineer with a strong background in developing software solutions with delightful user experiences.</p>
                         <br/>
-                        <p>Paired with my keen eye for detail and extreme passion for what I do, my experience in consulting and collaboration in problem-solving drives excellence in each project I undertake. </p>
+                        <p className='about-description'>Paired with my keen eye for detail and extreme passion for what I do, my experience in consulting and collaboration in problem-solving drives excellence in each project I undertake. </p>
                     </div>
                 </div>
             </div>

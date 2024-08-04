@@ -13,6 +13,13 @@ export default {
       minWidth: {
         '96': '24rem'
       },
+      width: {
+        '140vw': '140vw',
+        '200vw': '200vw'
+      },
+      right: {
+        'neg-40vw': '-40vw'
+      },
       fontSize: {
         '2.5xl': '1.62rem',
         '3.5xl': '2rem',

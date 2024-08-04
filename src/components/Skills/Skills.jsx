@@ -14,6 +14,7 @@ import GitLogo from '../../assets/git-logo.png'
 import FigmaLogo from '../../assets/figma-logo.png'
 import A11yLogo from '../../assets/a11y-logo.png'
 import ScrumLogo from '../../assets/scrum-logo.png'
+import './Skills.scss'
 
 
 const Skills = () => {
@@ -141,7 +142,7 @@ const Skills = () => {
     };
 
     return (
-        <section id="skills">
+        <section id="skills" data-scroll data-scroll-speed="0.1">
             <div className="section-content skills">
                 <h1 className="section-header">
                     <span className="text-color-primary">&#47; </span>

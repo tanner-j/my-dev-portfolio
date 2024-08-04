@@ -1,27 +1,75 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-scroll'
+import './Hero.scss'
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 const Hero = () => {
+
+    const hero = useRef();
+
+    useGSAP(() => {
+        let yellow = document.querySelector(".hero-container--yellow .hero-line");
+        let blue = document.querySelector(".hero-container--blue .hero-line");
+        let navy = document.querySelector(".hero-container--navy .hero-line");
+
+        gsap.to(yellow, {
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "top top",
+                scrub: 1
+            },
+            x: 400
+        });
+
+        gsap.to(blue, {
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "top top",
+                scrub: 1
+            },
+            x: -1000
+        });
+
+        gsap.to(navy, {
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "top top",
+                scrub: 1
+            },
+            y: 1200
+        });
+
+    }, { scope: hero })
+
     return (
-        <section id="hero">
-            <div className="hero-background">
-                <div className="heroheader">
-                    <div className="heroheader-content">
-                        <span className="hero-text--detail">Hello! I'm</span>
-                        <h1>Tanner Johnson</h1>
-                        <div className="hero-text-detail--wrapper">
-                            <span className="hero-text--detail">front-end developer </span>
-                            <span className="hero-text--detail">& UI/UX engineer</span>
-                        </div>
-                        <Link className="hero-btn--wrapper" to="about" smooth="true">
-                            <button className="hero-btn">
-                                <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z" /></svg>
-                                More about me
-                            </button>
-                        </Link>
-                    </div>
-                </div>
+        <section className='hero' id="hero">
+
+            <div className='hero-content' data-scroll data-scroll-speed="0.1">
+                <h1 className='hero-content--h1'>
+                    Hi, my<br /> name is <b>Tanner</b>
+                    <span>.</span>
+                </h1>
+                <p className='hero-content--text'>
+                    I'm a <b>front-end developer</b> and <b>UI/UX engineer</b> from Denver, Colorado.
+                </p>
             </div>
+
+            {/* Line elements */}
+            <div className='hero-container--blue'>
+                <div className='hero-line'></div>
+            </div>
+            <div className='hero-container--navy'>
+                <div className='hero-line'></div>
+            </div>
+            <div className='hero-container--yellow'>
+                <div className='hero-line'></div>
+            </div>
+
         </section>
     )
 }

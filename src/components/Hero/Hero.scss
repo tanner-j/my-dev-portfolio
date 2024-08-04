@@ -1,0 +1,64 @@
+section[id="hero"] {
+    @apply flex relative overflow-hidden bg-color-primary-light;
+    min-height: 115vh;
+    width: 100%;
+    padding-top: 80px;
+}
+
+/* Hero section text */
+.hero-content {
+    @apply relative h-auto md:p-20 p-8 overflow-hidden;
+    width: 100%;
+
+    .hero-content--h1 {
+        @apply text-6xl sm:text-7xl font-space-grotesk;
+    }
+
+    .hero-content--text {
+        @apply text-xl sm:text-2xl mt-8;
+        max-width: 500px;
+    }
+}
+
+/* Hero section illustrations */
+.hero-line {
+    height: 200px;
+    width: 16rem;
+}
+
+.hero-container--blue {
+    @apply w-200vw md:w-140vw flex absolute h-auto justify-end -right-3/4 md:-right-1/2;
+    top: calc(22rem + 280px);
+
+    .hero-line {
+        background-color: #1655BF;
+        border-radius: 100px 0 0 100px;
+        width: 85%;
+    }
+}
+
+.hero-container--yellow {
+    @apply absolute h-auto;
+    top: calc(22rem + 80px);
+    width: 120vw;
+    left: -20vw;
+
+    .hero-line {
+        background-color: #FAA806;
+        border-radius: 0 100px 100px 0;
+        width: 60%;
+    }
+}
+
+.hero-container--navy {
+    @apply hidden lg:flex absolute w-auto h-full items-end;
+    bottom: 0;
+    right: 10rem;
+    
+    .hero-line {
+        background-color: #0E3475;
+        border-radius: 100px 100px 0 0;
+        width: 200px;
+        height: 75%;
+    }
+}

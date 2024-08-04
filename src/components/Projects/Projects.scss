@@ -1,0 +1,66 @@
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 32px;
+}
+
+.project-item {
+    @apply bg-white border border-gray-200 rounded-2xl overflow-hidden;
+    box-shadow: 0px 2px 28px 0px rgba(197, 197, 197, 0.25);
+
+    &.has-link {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+        &:hover,
+        &:focus {
+            @apply shadow-lg;
+            transform: translateY(-0.5rem);
+        }
+
+        .project-item--header img {
+            @apply inline-block ml-1 w-5 h-5;
+            filter: brightness(0) saturate(100%) invert(33%) sepia(10%) saturate(542%) hue-rotate(169deg) brightness(95%) contrast(88%);
+        }
+    }
+
+    .project-item--image {
+        @apply bg-gray-100 p-6;
+
+        img {
+            @apply w-full h-60 object-scale-down;
+        }
+    }
+
+    &[id="logos"] .project-item--image {
+        @apply bg-white;
+    }
+
+    &[id="designSystem"] .project-item--image {
+        @apply bg-gradient-designsystem;
+    }
+
+    &[id="showcase"] .project-item--image {
+        @apply bg-gradient-showcase;
+    }
+
+    .project-item--info {
+        @apply flex flex-col gap-y-2 p-6 pt-3;
+
+        h2 {
+            @apply font-semibold text-2xl;
+            overflow-wrap: break-word;
+        }
+
+        .project-item--description {
+            @apply text-color-font-detail;
+        }
+
+        .project-item--tags {
+            @apply flex flex-wrap gap-2;
+
+            .tag {
+                @apply text-xs rounded-md py-1.5 px-2 bg-color-primary-light;
+            }
+        }
+    }
+}

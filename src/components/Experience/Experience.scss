@@ -1,0 +1,31 @@
+.experience-container {
+    @apply flex flex-col gap-y-16 px-6 py-4;
+}
+
+.experience-item {
+    @apply w-full;
+
+    /* Responsive styling */
+    @apply lg:w-2/3;
+
+    .experience-item--header {
+        @apply pb-4;
+        border-bottom: 1px solid theme('colors.color-font-detail');
+
+        h2 {
+            @apply font-semibold text-2xl;
+        }
+
+        span {
+            @apply text-color-font-detail;
+        }
+    }
+
+    .experience-item--list {
+        @apply pt-4 pl-4 list-disc;
+
+        li:not(:first-of-type) {
+            @apply mt-2;
+        }
+    }
+}
