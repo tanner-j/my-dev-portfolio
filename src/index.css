@@ -39,8 +39,8 @@ html {
 .section-content.projects,
 .section-content.skills,
 .section-content.contact {
-  @apply m-auto h-auto items-center md:p-20 p-8 overflow-hidden;
-  max-width: 1440px;
+  @apply m-auto h-auto items-center md:px-20 px-8 py-8 overflow-hidden;
+  max-width: 1280px;
 }
 
 section[id="contact"] {
@@ -51,60 +51,6 @@ section[id="contact"] {
   @apply md:pb-12;
 }
 
-
-
-/* ABOUT */
-.about-container {
-  @apply flex flex-col-reverse gap-16;
-
-  /* Responsive styling */
-  @apply xl:flex-row; 
-}
-
-.about-cards--wrapper {
-  @apply flex flex-col gap-8 pb-8 justify-center;
-
-  /* Responsive styling */
-  @apply md:flex-row;
-}
-
-.about-card {
-  @apply relative p-10 bg-white border border-gray-200 rounded-2xl text-center;
-  box-shadow: 0px 2px 28px 0px rgba(197, 197, 197, 0.25);   
-
-  /* Responsive styling */
-  @apply sm:min-w-96;
-}
-
-.about-card h2 {
-  @apply pb-2 font-semibold text-2xl;
-  overflow-wrap: break-word;
-}
-
-.about-card p {
-  @apply text-color-font-detail;
-}
-
-.about-card::before {
-  @apply absolute top-0 left-1/2 w-12 h-12 bg-color-primary rounded-full;
-  content: '';
-  transform: translateX(-50%) translateY(-50%);
-  background-position: center;
-  background-size: 1.5rem;
-  background-repeat: no-repeat;
-}
-
-.about-card[id="experience-about"]::before {
-  background-image: url(/src/assets/briefcase-outline.svg);
-}
-
-.about-card[id="education"]::before {
-  background-image: url(/src/assets/school-outline.svg);
-}
-
-.about-image--wrapper {
-  @apply flex;
-}
 
 /* SKILLS */
 .skills-filters {

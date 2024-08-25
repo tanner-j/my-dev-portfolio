@@ -142,7 +142,7 @@ const Skills = () => {
     };
 
     return (
-        <section id="skills" data-scroll data-scroll-speed="0.1">
+        <section id="skills">
             <div className="section-content skills">
                 <h1 className="section-header">
                     <span className="text-color-primary">&#47; </span>

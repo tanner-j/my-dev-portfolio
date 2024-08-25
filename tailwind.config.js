@@ -14,6 +14,7 @@ export default {
         '96': '24rem'
       },
       width: {
+        '0.25': '0.0625rem',
         '140vw': '140vw',
         '200vw': '200vw'
       },

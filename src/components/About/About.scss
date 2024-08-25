@@ -1,12 +1,37 @@
 .about-container {
-    @apply flex flex-col-reverse gap-16;
+    @apply flex flex-col gap-12;
 
     /* Responsive styling */
-    @apply xl:flex-row;
+    @apply lg:gap-24 lg:flex-row;
 }
 
 .about-description {
     @apply text-lg;
+
+    &.with-divider {
+        @apply relative mt-5;
+        padding-top: 3.25rem;
+
+        &:before {
+            @apply absolute h-8 w-0.25 top-0 left-1/2 bg-color-primary;
+            content: '';
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.about-description--divider {
+    @apply mt-5 h-8 w-0.25 bg-color-primary;
+}
+
+.about-info--wrapper {
+    @apply flex flex-col items-center;
+
+    p {
+        opacity: 1;           /* Ensure paragraphs are visible initially */
+        transform: translateY(0); /* Set starting vertical position */
+        transition: none;     /* Disable CSS transitions */
+    }
 }
 
 .about-cards--wrapper {
@@ -51,5 +76,13 @@
 }
 
 .about-image--wrapper {
-    @apply flex;
+    @apply flex self-center max-w-80 max-h-80;
+    
+    @media (min-width: 1024px) {
+        max-width: 26rem;
+        max-height: 30rem;       
+    }
+
+
+
 }
