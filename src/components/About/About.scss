@@ -1,3 +1,7 @@
+section[id="about"] {
+    @apply relative;
+}
+
 .about-container {
     @apply flex flex-col gap-12;
 
@@ -25,7 +29,7 @@
 }
 
 .about-info--wrapper {
-    @apply flex flex-col items-center;
+    @apply flex flex-col items-center z-10;
 
     p {
         opacity: 1;           /* Ensure paragraphs are visible initially */
@@ -76,13 +80,25 @@
 }
 
 .about-image--wrapper {
-    @apply flex self-center max-w-80 max-h-80;
+    @apply flex self-center max-w-80 max-h-80 z-10;
     
     @media (min-width: 1024px) {
         max-width: 26rem;
         max-height: 30rem;       
     }
+}
 
+/* About section illustrations */
+.about-line--container {
+    @apply hidden lg:flex absolute h-auto;
+    top: 75%;
+    width: 120vw;
+    left: -50vw;
 
-
+    .about-line {
+        background-color: #1655BF;
+        border-radius: 0 100px 100px 0;
+        height: 200px;
+        width: 60%;
+    }
 }

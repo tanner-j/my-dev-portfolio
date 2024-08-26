@@ -21,6 +21,10 @@ html {
     @apply bg-bg-color;
 }
 
+html, body {
+    scroll-behavior: auto;
+  }
+
 #root {
     @apply relative m-0 min-w-full;
 }

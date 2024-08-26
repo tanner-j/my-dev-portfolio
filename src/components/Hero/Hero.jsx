@@ -17,11 +17,44 @@ const Hero = () => {
         let blue = document.querySelector(".hero-container--blue .hero-line");
         let navy = document.querySelector(".hero-container--navy .hero-line");
 
+        gsap.from('.hero-content > *', {
+            opacity: 0,
+            y: 20,
+            duration: 1,
+            delay: 0.5,
+            ease: 'power4.out',
+            stagger: 0.5,
+            onComplete: () => ScrollTrigger.refresh() // Ensure scroll-triggered animations are recalculated
+        });
+
+        // Slide-in animations for the lines on page load
+        gsap.fromTo(yellow,
+            { x: -200, opacity: 0 },  // Start state
+            { x: 0, opacity: 1, duration: 1.5, delay: 0.2, ease: 'power4.out' }  // End state, matching the initial scroll position
+        );
+
+        gsap.fromTo(blue,
+            { x: 200, opacity: 0 },  // Start state
+            { x: 0, opacity: 1, duration: 1.5, delay: 0.4, ease: 'power4.out' }  // End state, matching the initial scroll position
+        );
+
+        gsap.fromTo(navy,
+            { y: 200, opacity: 0 },  // Start state
+            { y: 0, opacity: 1, duration: 1.5, delay: 0.8, ease: 'power4.out' }  // End state, matching the initial scroll position
+        );
+
+        // Set initial positions for scroll-triggered animations to ensure continuity
+        gsap.set(yellow, { x: 0 });
+        gsap.set(blue, { x: 0 });
+        gsap.set(navy, { y: 0 });
+
+
         gsap.to(yellow, {
             scrollTrigger: {
                 trigger: ".hero",
                 start: "top top",
-                scrub: 1
+                scrub: 1,
+                immediateRender: false
             },
             x: 400
         });
@@ -30,7 +63,8 @@ const Hero = () => {
             scrollTrigger: {
                 trigger: ".hero",
                 start: "top top",
-                scrub: 1
+                scrub: 1,
+                immediateRender: false
             },
             x: -1000
         });
@@ -39,7 +73,8 @@ const Hero = () => {
             scrollTrigger: {
                 trigger: ".hero",
                 start: "top top",
-                scrub: 1
+                scrub: 1,
+                immediateRender: false
             },
             y: 1200
         });
@@ -47,9 +82,9 @@ const Hero = () => {
     }, { scope: hero })
 
     return (
-        <section className='hero' id="hero">
+        <section className='hero' id="hero" ref={hero}>
 
-            <div className='hero-content' data-scroll data-scroll-speed="0.1">
+            <div className='hero-content'>
                 <h1 className='hero-content--h1'>
                     Hi, my<br /> name is <b>Tanner</b>
                     <span>.</span>

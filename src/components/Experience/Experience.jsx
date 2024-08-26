@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './Experience.scss'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 const Experience = () => {
+
+    const experienceRef = useRef();
+
+    useGSAP(() => {
+        let line = document.querySelector(".experience-line--container .experience-line");
+
+        gsap.to(line, {
+            scrollTrigger: {
+                trigger: ".experience-container",
+                start: "top top",
+                scrub: 1
+            },
+            x: -200
+        });
+
+    }, { scope: experienceRef })
+
     return (
-        <section id="experience">
+        <section id="experience"  ref={experienceRef}>
             <div className="section-content experience">
                 <h1 className="section-header">
                     <span className="text-color-primary">&#47; </span>
@@ -52,6 +75,9 @@ const Experience = () => {
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div className='experience-line--container'>
+                <div className='experience-line'></div>
             </div>
 
         </section>

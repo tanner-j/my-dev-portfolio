@@ -1,5 +1,6 @@
 section[id="hero"] {
-    @apply flex relative overflow-hidden bg-color-primary-light;
+    //removed flex
+    @apply relative overflow-hidden bg-color-primary-light;
     min-height: 115vh;
     width: 100%;
     padding-top: 80px;
