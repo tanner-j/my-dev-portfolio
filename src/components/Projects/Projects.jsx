@@ -1,9 +1,9 @@
 import React from 'react'
 import ProjectCard from './ProjectCard'
-import ClientsImg from '../../assets/project-clients-cover.svg'
-import DesignSystemImg from '../../assets/project-design-system-cover.svg'
-import ShowcaseImg from '../../assets/project-showcase-cover.svg'
-import CFAQuizImg from '../../assets/project-cfa-quiz-cover.svg'
+import ClientsImg from '../../assets/project-clients-cover.png'
+import DesignSystemImg from '../../assets/project-design-system-cover.png'
+import ShowcaseImg from '../../assets/project-showcase-cover.png'
+import CFAQuizImg from '../../assets/project-cfa-quiz-cover.png'
 import './Projects.scss'
 
 const Projects = () => {
