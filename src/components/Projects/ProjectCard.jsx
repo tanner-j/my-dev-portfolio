@@ -7,8 +7,46 @@ function ProjectCard(props, index) {
     // Check if tags is an array
     const tagsArray = Array.isArray(tags) ? tags : [];
 
+    // const projectContainer = projectUrl ? (
+    //     <a href={projectUrl} target="_blank" rel="noreferrer" className="project-item has-link" key={index} id={id}>
+    //         <div className="project-item--image">
+    //             <img src={imageUrl} alt={alt} loading="lazy" />
+    //         </div>
+    //         <div className="project-item--info">
+    //             <div className="project-item-header--wrapper">
+    //                 <h2 className="project-item--header">
+    //                     {title}
+    //                     <img src={externalLink} alt="external link icon"></img>
+    //                 </h2>
+    //             </div>
+    //             <div className="project-item--tags">
+    //                 {tagsArray.map((tag, index) => (
+    //                     <span key={index} className="tag">{tag}</span>
+    //                 ))}
+    //             </div>
+    //             <p className="project-item--description">{description}</p>
+    //         </div>
+    //     </a>
+
+    // ) : (
+    //     <div className="project-item" key={index} id={id}>
+    //         <div className="project-item--image">
+    //             <img src={imageUrl} alt={alt} loading="lazy" />
+    //         </div>
+    //         <div className="project-item--info">
+    //             <h2 className="project-item--header">{title}</h2>
+    //             <div className="project-item--tags">
+    //                 {tagsArray.map((tag, index) => (
+    //                     <span key={index} className="tag">{tag}</span>
+    //                 ))}
+    //             </div>
+    //             <p className="project-item--description">{description}</p>
+    //         </div>
+    //     </div>
+    // );
+
     const projectContainer = projectUrl ? (
-        <a href={projectUrl} target="_blank" rel="noreferrer" className="project-item has-link" key={index} id={id}>
+        <a href={projectUrl} target="_blank" rel="noreferrer" className="project-item-v2 has-link" key={index} id={id}>
             <div className="project-item--image">
                 <img src={imageUrl} alt={alt} loading="lazy" />
             </div>
@@ -19,27 +57,27 @@ function ProjectCard(props, index) {
                         <img src={externalLink} alt="external link icon"></img>
                     </h2>
                 </div>
-                <div className="project-item--tags">
+                {/* <div className="project-item--tags">
                     {tagsArray.map((tag, index) => (
                         <span key={index} className="tag">{tag}</span>
                     ))}
-                </div>
+                </div> */}
                 <p className="project-item--description">{description}</p>
             </div>
         </a>
 
     ) : (
-        <div className="project-item" key={index} id={id}>
+        <div className="project-item-v2" key={index} id={id}>
             <div className="project-item--image">
                 <img src={imageUrl} alt={alt} loading="lazy" />
             </div>
             <div className="project-item--info">
                 <h2 className="project-item--header">{title}</h2>
-                <div className="project-item--tags">
+                {/* <div className="project-item--tags">
                     {tagsArray.map((tag, index) => (
                         <span key={index} className="tag">{tag}</span>
                     ))}
-                </div>
+                </div> */}
                 <p className="project-item--description">{description}</p>
             </div>
         </div>
