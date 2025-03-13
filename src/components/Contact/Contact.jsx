@@ -18,7 +18,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className='contact-footer'>
-                    <span>&copy; 2024 Tanner Johnson</span>
+                    <span>&copy; 2025 Tanner Johnson</span>
                 </div>
             </div>
         </section>
